@@ -1,0 +1,8 @@
+{
+  "name": "PlantCare AI",
+  "description": "AI-powered botanical diagnostics and plant care companion using the Organic Intelligence design system.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}

@@ -1,0 +1,51 @@
+# =========================
+# 1. Security & Environment
+# =========================
+.env
+*.env
+.env.*
+
+# =========================
+# 2. Python / Backend / ML
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+logs_folder/
+# Ignore Jupyter Notebook checkpoints and scratch files
+.ipynb_checkpoints
+Untitled*.ipynb
+Untitled*
+
+# =========================
+# 3. Node.js / Frontend (agro folder)
+# =========================
+agro/node_modules/
+agro/dist/
+agro/New\ folder/
+npm-debug.log
+yarn-error.log
+
+# =========================
+# 4. Android / Capacitor (agro/android folder)
+# =========================
+# Gradle and IDE files
+agro/android/.gradle/
+agro/android/.idea/
+agro/android/**/*.iml
+agro/android/local.properties
+agro/android/local
+
+# Android Build directories
+agro/android/build/
+agro/android/app/build/
+
+# Capacitor auto-generated plugins
+agro/android/capacitor-cordova-android-plugins/
+
+# =========================
+# 5. OS & Generic Files
+# =========================
+.DS_Store
+Thumbs.db
