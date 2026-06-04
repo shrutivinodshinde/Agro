@@ -200,34 +200,34 @@ Results Dashboard
 
 ## Core Screens
 
-### Dashboard
+Screens
+Login.tsx
 
-Provides:
+Email/password form with show/hide password toggle
+Calls POST /api/v1/auth/login, stores JWT in app state
+Animated UI using Framer Motion
 
-* Disease scanning
-* Camera integration
-* Upload interface
-* User interactions
+Home.tsx (Dashboard)
 
-### Results Screen
+File picker upload + live camera capture
+Sends image to POST /api/v1/predict with optional lat, lng, lang params
+Multi-stage animated loading feedback tied to real processing steps:
 
-Displays:
+0s    →  🔍 Analysing leaf image...
+3s    →  🧠 Detecting disease with EfficientNet-B3...
+8s    →  🤖 Running AI Disease Specialist...
+60s   →  💊 Generating treatment plan...
+120s  →  🌤️  Checking weather for spray schedule...
+180s  →  📋 Finalising report... almost done!
 
-* Plant species
-* Disease prediction
-* Confidence score
-* Severity level
-* Treatment recommendations
+Recent scan activity feed (local state)
 
-### History Screen
+Result.tsx
 
-Provides:
-
-* Previous scans
-* Historical reports
-* Treatment records
-
----
+Displays plant species, disease name, confidence %, severity badge
+Top-3 prediction breakdown
+Full AI-generated agent report (markdown rendered)
+Back to dashboard
 
 ## Mobile Deployment
 
