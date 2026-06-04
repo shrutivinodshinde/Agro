@@ -200,18 +200,15 @@ Results Dashboard
 
 ## Core Screens
 
-Screens
-Login.tsx
+### `Login.tsx`
+- Email/password form with show/hide password toggle
+- Calls `POST /api/v1/auth/login`, stores JWT in app state
+- Animated UI using Framer Motion
 
-Email/password form with show/hide password toggle
-Calls POST /api/v1/auth/login, stores JWT in app state
-Animated UI using Framer Motion
-
-Home.tsx (Dashboard)
-
-File picker upload + live camera capture
-Sends image to POST /api/v1/predict with optional lat, lng, lang params
-Multi-stage animated loading feedback tied to real processing steps:
+### `Home.tsx` (Dashboard)
+- File picker upload + live camera capture
+- Sends image to `POST /api/v1/predict` with optional `lat`, `lng`, `lang` params
+- Multi-stage animated loading feedback tied to real processing steps:
 
 0s    →  🔍 Analysing leaf image...
 3s    →  🧠 Detecting disease with EfficientNet-B3...
@@ -220,14 +217,15 @@ Multi-stage animated loading feedback tied to real processing steps:
 120s  →  🌤️  Checking weather for spray schedule...
 180s  →  📋 Finalising report... almost done!
 
-Recent scan activity feed (local state)
+- Recent scan activity feed (local state)
 
-Result.tsx
+### `Result.tsx`
+- Displays plant species, disease name, confidence %, severity badge
+- Top-3 prediction breakdown
+- Full AI-generated agent report (markdown rendered)
+- Back to dashboard
 
-Displays plant species, disease name, confidence %, severity badge
-Top-3 prediction breakdown
-Full AI-generated agent report (markdown rendered)
-Back to dashboard
+---
 
 ## Mobile Deployment
 
