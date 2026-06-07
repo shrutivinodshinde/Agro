@@ -270,24 +270,6 @@ POST /api/v1/predict
 
 ### Model Architecture
 
-```python
-class PlantModel(nn.Module):
-    def __init__(self, n_plants, n_diseases):
-        backbone = efficientnet_b3(weights=None)
-        self.features    = backbone.features        # shared feature extractor
-        self.pool        = nn.AdaptiveAvgPool2d(1)
-        feature_dim      = 1536
-
-        self.plant_head  = nn.Linear(feature_dim, n_plants)
-
-        self.disease_head = nn.Sequential(
-            nn.Linear(feature_dim, 1024),
-            nn.ReLU(),
-            nn.Dropout(0.4),
-            nn.Linear(1024, n_diseases)
-        )
-```
-
 - One forward pass → two outputs (plant + disease) simultaneously
 - Lazy loading — model loads on first request, not at startup
 - Auto-downloads from `MODEL_URL` (Azure Storage) if not present locally
